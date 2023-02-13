@@ -26,6 +26,14 @@ Bonus (V2)
 - Search for artwork by subject, artist, time period, etc
 - Inquire about certain galleries thru a form directed to the gallery owner
 
+# Technologies Used
+- React Javascript
+- SASS
+- Express
+- Mongodb
+- Mongoose
+
+
 # Entity Relationship Diagrams (ERDs)
 ![](ERD.png)
 # Wireframes
