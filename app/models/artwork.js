@@ -8,24 +8,20 @@ const artworkSchema = new mongoose.Schema(
 			required: true,
 		},
 		description: {
-			type: String,
-			required: true,
+			type: String
 		},
 		date: {
-			type: Date,
-			required: true,
+			type: String
 		},
 		artist: {
 			type: String,
 			required: true,
 		},
 		dimensions: {
-			type: String,
-			required: true,
+			type: String
 		},
 		medium: {
-			type: String,
-			required: true,
+			type: String
 		},
 		img: {
 			type: String,
