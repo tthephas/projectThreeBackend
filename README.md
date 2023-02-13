@@ -29,3 +29,38 @@ Bonus (V2)
 # Entity Relationship Diagrams (ERDs)
 
 # Wireframes
+
+
+
+### Users
+
+###### Routes Table
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/sign-up`             | `users#signup`    |
+| POST   | `/sign-in`             | `users#signin`    |
+| PATCH  | `/change-password/`    | `users#changepw`  |
+| DELETE | `/sign-out/`           | `users#signout`   |
+
+
+### Artworks
+
+###### Routes Table
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| GET    | `/artworks`            | `artworks#index`  |
+| GET    | `/artworks/:id`        | `artworks#show`   |
+
+### Exhibitions
+
+###### Routes Table
+
+| Verb   | URI Pattern             | Controller#Action        |
+|--------|-------------------------|--------------------------|
+| GET    | `/exhibitions`          | `exhibitions#index`      |
+| GET    | `/exhibitions/:Id`      | `exhibitions#show`       |
+| POST   | `/exhibitions/:Id`      | `exhibitions#create`     |
+| PATCH  | `/exhibitions/:Id`      | `exhibitions#update`     |
+| DELETE | `/exhibitions/:Id`      | `exhibitions#delete`     |
