@@ -1,7 +1,8 @@
-##Project 3 - Art Gallery
-#Back End
+# Project 3 - Art Gallery
 
-#Overview
+# Description 
+Art Gallery App allows users to view museum collections and create their own online exhibitions. Each curated exhibition will have a unique title, description, viewing dates and a series of artworks chosen from the overall Met Museum collection. Users will be able to view hundred of artworks from the MET API, filtered by department. The website will also featured an index of user-created exhibitions.
+To create this app, we take in data using the Met's Open Access API ( https://metmuseum.github.io/ ). This API contains thousands of objects, each representing one piece of individual artwork, ranging from paintings, sculpture and ceramics to costumes, furniture and more. We created an artwork model that matched many of the API's existing fields, such title, description, date period, artist name, dimensions, medium (type of artwork) and the department in which it resides. Once we created individual artworks, we created an index of total artworks through which users could browse. Once a user signs in and creates their profile, they are able to create their own exhibition. Upon submission, a unique link is generated for the user to share with family and friends.
 
 # User Stories
 
@@ -52,6 +53,7 @@ Bonus (V2)
 |--------|------------------------|-------------------|
 | GET    | `/artworks`            | `artworks#index`  |
 | GET    | `/artworks/:id`        | `artworks#show`   |
+
 
 ### Exhibitions
 
