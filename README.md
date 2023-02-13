@@ -32,7 +32,18 @@ Bonus (V2)
 - Search for artwork by subject, artist, time period, etc
 - Inquire about certain galleries thru a form directed to the gallery owner
 
+
+# Technologies Used
+- React Javascript
+- SASS
+- Express
+- Mongodb
+- Mongoose
+
+
+
 ## Entity Relationship Diagrams (ERDs)
+
 ![](ERD.png)
 ## Wireframes
 Wireframes were created in Figma and can be viewed at this [link](https://www.figma.com/file/DHUztB6IaUgp0uYTTQKJId/SEI-Project-3?node-id=0%3A1&t=iQouSBqQ90jxXsxJ-1).
