@@ -22,10 +22,6 @@ const exhibitionSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        featured: {
-            type: Boolean,
-            required: true,
-        },
         artworks: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Artwork',
