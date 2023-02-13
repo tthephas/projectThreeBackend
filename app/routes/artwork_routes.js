@@ -49,7 +49,7 @@ router.get('/artworks', async (req, res, next) => {
             const artworkIdNum = artworkInfo.data.objectIDs.slice(1252,1258)
 
 
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 
                 const paintingInfo = await axios(`${process.env.MET_URL}/${artworkIdNum[i]}`)
                 console.log('this is the painting info ', paintingInfo.data.primaryImageSmall)
