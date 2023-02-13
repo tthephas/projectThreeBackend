@@ -1,9 +1,9 @@
-##Project 3 - Art Gallery
-#Back End
+# Project 3 - Art Gallery
+## Back End
 
-#Overview
+## Overview
 
-# User Stories
+## User Stories
 
 MVP (V1)
 As a user, I want the ability to….
@@ -14,8 +14,7 @@ As a user, I want the ability to….
 - Sign out
 - Create my own gallery of artwork
 - View my gallery of artwork
-- Update the details of my own gallery
-- Delete artwork from my gallery
+- Update the details of my own - Delete artwork from my gallery
 - View galleries others have created
 - View an index of all of the galleries of artwork
 
@@ -26,12 +25,38 @@ Bonus (V2)
 - Search for artwork by subject, artist, time period, etc
 - Inquire about certain galleries thru a form directed to the gallery owner
 
-# Entity Relationship Diagrams (ERDs)
+## Entity Relationship Diagrams (ERDs)
 ![](ERD.png)
-# Wireframes
+## Wireframes
+Wireframes were created in Figma and can be viewed at this [link](https://www.figma.com/file/DHUztB6IaUgp0uYTTQKJId/SEI-Project-3?node-id=0%3A1&t=iQouSBqQ90jxXsxJ-1).
+
+### Homepage
+<img src="./private/Project_3_wireframes_Page_1.png" />
 
 
+### Department Index
+<img src="./private/Project_3_wireframes_Page_2.png" />
 
+### Department Show
+<img src="./private/Project_3_wireframes_Page_3.png" />
+
+### Artwork Show
+<img src="./private/Project_3_wireframes_Page_4.png" />
+
+### Exhibition Create
+<img src="./private/Project_3_wireframes_Page_5.png" />
+
+### Exhibition Index
+<img src="./private/Project_3_wireframes_Page_6.png" />
+
+### Exhibition Show
+<img src="./private/Project_3_wireframes_Page_7.png" />
+
+### User Dashboard
+<img src="./private/Project_3_wireframes_Page_8.png" />
+
+
+## Routes
 ### Users
 
 ###### Routes Table
