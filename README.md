@@ -27,7 +27,7 @@ Bonus (V2)
 - Inquire about certain galleries thru a form directed to the gallery owner
 
 # Entity Relationship Diagrams (ERDs)
-
+![](ERD.png)
 # Wireframes
 
 
