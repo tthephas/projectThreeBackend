@@ -35,32 +35,42 @@ const router = express.Router()
 
 
 // INDEX
-// GET /examples
-router.get('/artworks', async (req, res, next) => {
-	Artwork.find({})
-		.then(async artworks => {
+// GET /artworks
+router.get('/artworks', (req, res, next) => {
+	
+    Artwork.find()
+        .then(async artwork => {
+            const artworkImages = await axios(`${process.env.MET_IMAGE_URL}`)
+            console.log('this is the data.objectIDs array: ',artworkImages.data.objectIDs)
+            const slicedArr = artworkImages.data.objectIDs.slice(1, 9)
+            console.log('this is slicedArr: \n', slicedArr)
             
-            const artworkInfo = await axios(`${process.env.MET_URL}`)
+			slicedArr.map(async objectID => {
+                console.log('this is objectID in slicedArr', objectID)
+                //let artworkObjId = null
+				try {
+					const artworkObjId = await axios(`${process.env.MET_OBJECTID_URL}/${objectID}`)
+					
+				} catch (err) {
+					console.error(err)
 
-            const artworkIdNum = artworkInfo.data.objectIDs.slice(43152,43159)
-
-            
-            for (let i = 0; i < artworkIdNum.length; i++) {
-                const artworkURL = process.env.MET_URL + `/${artworkIdNum[i]}`
-                console.log(artworkURL)
-                const paintingInfo =  await axios(`${artworkURL}`)
-                    console.log('title' , paintingInfo)
-                res.json({ 
-                    title: paintingInfo.data.title, 
-                    date : paintingInfo.data.objectDate, 
-                    artist: paintingInfo.data.artistDisplayName, 
-                    dimensions : paintingInfo.data.dimensions, 
-                    medium : paintingInfo.data.medium, 
-                    img : paintingInfo.data.primaryImageSmall, 
-                    department : paintingInfo.data.department 
-                })
-            }
+				} finally {
+					// artworkObject = {
+					// 	"title": artworkObjId.data.title,
+					// 	"artist": artworkObjId.data.artistDisplayName,
+					// 	"department": artworkObjId.data.department,
+					// 	"medium": artworkObjId.data.medium,
+					// 	"img": artworkObjId.data.primaryImage
+					// }
+					console.log('the artwork! \n', artworkObjId)
+				}
+                //console.log('the artwork! \n', artwork)
+            })
+			
 		})
+		// respond with status 200 and JSON of the examples
+		.then((artwork) => res.status(200).json({ artwork: artwork }))
+		// if an error occurs, pass it to the handler
 		.catch(next)
 })
 
