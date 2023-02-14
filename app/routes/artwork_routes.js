@@ -47,7 +47,7 @@ router.get('/artworks', (req, res, next) => {
             
 			slicedArr.map(async objectID => {
                 console.log('this is objectID in slicedArr', objectID)
-                let artworkObjId = null
+                //let artworkObjId = null
 				try {
 					const artworkObjId = await axios(`${process.env.MET_OBJECTID_URL}/${objectID}`)
 					
@@ -64,10 +64,7 @@ router.get('/artworks', (req, res, next) => {
 					// }
 					console.log('the artwork! \n', artworkObjId)
 				}
-                
-				
                 //console.log('the artwork! \n', artwork)
-                
             })
 			
 		})
