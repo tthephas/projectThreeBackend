@@ -37,33 +37,30 @@ const router = express.Router()
 // INDEX
 // GET /examples
 router.get('/artworks', async (req, res, next) => {
-	Artwork.find()
+	Artwork.find({})
 		.then(async artworks => {
-			// `examples` will be an array of Mongoose documents
-			// we want to convert each one to a POJO, so we use `.map` to
-			// apply `.toObject` to each one
             
             const artworkInfo = await axios(`${process.env.MET_URL}`)
-            //console.log('this is the artwork ID ', artworkInfo.data.objectIDs.slice(15,20))
 
-            const artworkIdNum = artworkInfo.data.objectIDs.slice(1252,1258)
+            const artworkIdNum = artworkInfo.data.objectIDs.slice(43152,43159)
 
-
-            for (let i = 0; i < 5; i++) {
-                
-                const paintingInfo = await axios(`${process.env.MET_URL}/${artworkIdNum[i]}`)
-                console.log('this is the painting info ', paintingInfo.data.primaryImageSmall)
-                //artworkIdNum[i]
+            
+            for (let i = 0; i < artworkIdNum.length; i++) {
+                const artworkURL = process.env.MET_URL + `/${artworkIdNum[i]}`
+                console.log(artworkURL)
+                const paintingInfo =  await axios(`${artworkURL}`)
+                    console.log('title' , paintingInfo)
+                res.json({ 
+                    title: paintingInfo.data.title, 
+                    date : paintingInfo.data.objectDate, 
+                    artist: paintingInfo.data.artistDisplayName, 
+                    dimensions : paintingInfo.data.dimensions, 
+                    medium : paintingInfo.data.medium, 
+                    img : paintingInfo.data.primaryImageSmall, 
+                    department : paintingInfo.data.department 
+                })
             }
-
-            // const theImage = paintingInfo.data.primaryImage
-            // console.log(theImage)
-
-			//return examples.map((example) => example.toObject())
 		})
-		// respond with status 200 and JSON of the examples
-		// .then((artworks) => res.status(200).json({ artworks: artworks }))
-		// if an error occurs, pass it to the handler
 		.catch(next)
 })
 
