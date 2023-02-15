@@ -70,6 +70,18 @@ router.post('/exhibitions', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH `/exhibitions/:Id`
+router.patch('/exhibitions/:id', requireToken, removeBlanks, (req, res, next) => {
+    delete req.body.exhibition.owner
+
+    Exhibition.findById(req.params.id)
+        .then(handle404)
+        .then((exhibition) => {
+            requireOwnership(req, exhibition)
+            return exhibition.updateOne(req.body.exhibition)
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
 
 // DELETE -> Delete 
 // DELETE `/exhibitions/:Id`
