@@ -44,7 +44,14 @@ router.get('/exhibitions', (req, res, next) => {
 })
 
 // SHOW
-// GET `/exhibitions/:Id`
+// GET `/exhibitions/:id`
+router.get('/exhibitions/:id', (req, res, next) => {
+    Exhibition.findById(req.params.id)
+        .then(handle404)
+        .then((exhibition) => res.status(200).json({ exhibition: exhibition.toObject() }))
+        .catch(next)
+})
+
 
 // CREATE
 // POST `/exhibitions`
