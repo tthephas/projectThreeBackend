@@ -69,7 +69,7 @@ router.post('/exhibitions', requireToken, (req, res, next) => {
 })
 
 // UPDATE
-// PATCH `/exhibitions/:Id`
+// PATCH `/exhibitions/:id`
 router.patch('/exhibitions/:id', requireToken, removeBlanks, (req, res, next) => {
     delete req.body.exhibition.owner
 
@@ -84,6 +84,16 @@ router.patch('/exhibitions/:id', requireToken, removeBlanks, (req, res, next) =>
 })
 
 // DELETE -> Delete 
-// DELETE `/exhibitions/:Id`
+// DELETE `/exhibitions/:id`
+router.delete('/exhibitions/:id', requireToken, (req, res, next) => {
+    Exhibition.findById(req.params.id)
+        .then(handle404)
+        .then((exhibition) => {
+            requireOwnership(req, exhibition)
+            exhibition.deleteOne()
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
 
 module.exports = router
