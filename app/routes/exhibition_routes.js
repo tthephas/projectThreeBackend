@@ -36,6 +36,7 @@ const router = express.Router()
 // GET `/exhibitions/`
 router.get('/exhibitions', (req, res, next) => {
     Exhibition.find()
+        .populate('owner')
         .then((exhibitions) => {
             return exhibitions.map((exhibition) => exhibition.toObject())
         })
@@ -47,6 +48,7 @@ router.get('/exhibitions', (req, res, next) => {
 // GET `/exhibitions/:id`
 router.get('/exhibitions/:id', (req, res, next) => {
     Exhibition.findById(req.params.id)
+        .populate('owner')
         .then(handle404)
         .then((exhibition) => res.status(200).json({ exhibition: exhibition.toObject() }))
         .catch(next)
