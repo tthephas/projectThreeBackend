@@ -55,16 +55,16 @@ router.get('/exhibitions/:id', (req, res, next) => {
 
 // CREATE
 // POST `/exhibitions`
-// router.post('/exhibitions', requireToken, (req, res, next) => {
-//     // set owner of the exhibition to be current user
-//     req.body.exhibition.owner = req.user.id
+router.post('/exhibitions', requireToken, (req, res, next) => {
+    // set owner of the exhibition to be current user
+    req.body.exhibition.owner = req.user.id
 
-//     Exhibition.create(req.body.exhibition)
-//         .then((exhibition) => {
-//             res.status(201).json({ exhibition: exhibition.toObject() })
-//         }) 
-//         .catch(next)
-// })
+    Exhibition.create(req.body.exhibition)
+        .then((exhibition) => {
+            res.status(201).json({ exhibition: exhibition.toObject() })
+        }) 
+        .catch(next)
+})
 
 // UPDATE
 // PATCH `/exhibitions/:Id`
