@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Exhibition = require('./exhibition')
+const Exhibition = require('../models/exhibition')
 const db = require('../../config/db')
 
 const startExhibitions = [

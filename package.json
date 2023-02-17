@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node ./app/models/seed.js",
-    "departmentSeed": "node ./app/models/departmentSeed.js"
+    "seedExhibitions": "node ./app/seed/exhibitions.js",
+    "seedDepartments": "node ./app/seed/departments.js"
   },
   "author": "The Con Artist",
   "license": "ISC",

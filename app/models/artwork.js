@@ -38,6 +38,6 @@ const artworkSchema = new mongoose.Schema(
 	}
 )
 
-module.exports = mongoose.model('Artwork', artworkSchema)
+module.exports = artworkSchema
 
 

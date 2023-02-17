@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Department = require('./department')
+const Department = require('../models/department')
 const db = require('../../config/db')
 
 const startDepartments = [
