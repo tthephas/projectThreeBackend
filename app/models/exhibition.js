@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const artworkSchema = require('./artwork')
 
 const exhibitionSchema = new mongoose.Schema(
 	{
@@ -22,10 +23,7 @@ const exhibitionSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        artworks: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Artwork'
-        }],
+        artworks: [artworkSchema],
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User'
