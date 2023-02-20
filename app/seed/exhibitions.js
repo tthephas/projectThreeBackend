@@ -132,7 +132,7 @@ const startExhibitions = [
         description:'The subject of an acclaimed exhibition at the Uffizi Gallery in 2020, Giovanna Garzoni (1600-1670) was one of the most renowned and accomplished still-life painters and miniaturists of the seventeenth century. One of the first women artists to master the art of still life painting, Garzoni is recognized as a pioneer of the genre and an important influence on subsequent generations of academic painters and artists',
         startDate:'Oct 1, 2022',
         endDate:'Dec 15, 2022',
-        img:'https://i0.wp.com/hyperallergic-newspack.s3.amazonaws.com/uploads/2020/03/giovanna-garzoni-HOME.jpg?fit=1000%2C618&quality=100&ssl=1',
+        img:'https://i.etsystatic.com/23982074/r/il/8685c8/2967066933/il_fullxfull.2967066933_3qie.jpg',
         featured: false,
         artworks: 
             [ 
