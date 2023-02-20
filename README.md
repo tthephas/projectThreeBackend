@@ -82,3 +82,8 @@ Bonus (V2)
 | POST   | `/exhibitions/:Id`      | `exhibitions#create`     |
 | PATCH  | `/exhibitions/:Id`      | `exhibitions#update`     |
 | DELETE | `/exhibitions/:Id`      | `exhibitions#delete`     |
+
+## Seed database
+
+`npm run seedExhibitions`
+`npm run seedDepartments`
