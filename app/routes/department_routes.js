@@ -43,13 +43,13 @@ router.get('/departments', (req, res, next) => {
     .catch(next)
 })
 
+// GET one department
 router.get('/departments/:id', (req, res, next) => {
 	// req.params.id will be set based on the `:id` in the route
 	Department.findById(req.params.id)
 		.then(handle404)
-		// if `findById` is succesful, respond with 200 and "pet" JSON
+		// if `findById` is succesful, respond with 200 
 		.then((department) => res.status(200).json({ department: department.toObject() }))
-		// if an error occurs, pass it to the handler
 		.catch(next)
 })
 

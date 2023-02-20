@@ -37,27 +37,25 @@ const router = express.Router()
 // Routes for adding artworks to exhibitions
 
 router.post('/artworks/:exhibitionId', removeBlanks, (req, res, next) => {
-    // isolate our toy from the request, and save to variable
+    
     const artwork = req.body.artworks
-    // isolate and save our pet's id for easy reference
+    
     const exhibitionId = req.params.exhibitionId
-    // find the pet and push the new toy into the pet's array
+
     Exhibition.findById(exhibitionId)
-        // first step is to use our custom 404 middleware
+
         .then(handle404)
-        // handle adding toy to pet
+
         .then(exhibition => {
             console.log('the exhibition: ', exhibition)
             console.log('the artwork: ', artwork)
-            // add toy to toys array
             exhibition.artworks.push(artwork)
 
-            // save the pet
             return exhibition.save()
         })
-        // send info after updating the pet
+
         .then(exhibition => res.status(201).json({ exhibition: exhibition }))
-        // pass errors along to our error handler
+
         .catch(next)
 })
 
