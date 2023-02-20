@@ -2,36 +2,34 @@ const mongoose = require('mongoose')
 
 
 const artworkSchema = new mongoose.Schema(
-	{
+	{	id: {
+			type: Number,
+		},
 		title: {
 			type: String,
 			required: true,
 		},
-		description: {
+		date: {
 			type: String
 		},
-		date: {
+		desc: {
 			type: String
 		},
 		artist: {
 			type: String,
-			required: true,
 		},
-		dimensions: {
+		dims: {
 			type: String
 		},
-		medium: {
+		type: {
 			type: String
-		},
-		img: {
-			type: String,
-			required: true,
 		},
 		department: {
 			type: String,
-			required: true,
 		},
-
+		img: {
+			type: String,
+		},
 	},
 	{
 		timestamps: true,
